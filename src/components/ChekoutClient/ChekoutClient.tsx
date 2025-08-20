@@ -8,6 +8,7 @@ import { PromoForm } from '../PromoForm';
 import { OrderSummary } from '../OrderSummary';
 
 import { Bounce, toast } from "react-toastify";
+import Link from 'next/link';
 
 
 
@@ -55,7 +56,14 @@ export const CheckoutClient = ({ product }: CheckoutClientProps) => {
   const total = subtotal - appliedDiscount;
 
   return (
-    <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4">
+          <Link
+        href="/"
+        className="text-pink-200 hover:underline mb-4 inline-block bg-blue-900 p-2  rounded shadow-md focus:bg-blue-400 hover:bg-blue-400 transition-all duration-300"
+        aria-label="Back to home"
+      >
+        Back to Home
+      </Link>
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-1">

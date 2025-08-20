@@ -5,11 +5,12 @@ import { fetchProduct } from '@/utils/api';
 
 
 interface CheckoutPageProps {
-  searchParams: { product_id?: string };
+    searchParams: Promise<{ product_id?: string }>;
 }
 
 export default async function CheckoutPage({ searchParams }: CheckoutPageProps) {
-  const productId = searchParams.product_id;
+    const params = await searchParams;
+    const productId = params.product_id;
 
   if (!productId) {
     return <div className="container mx-auto p-4">No product ID provided</div>;

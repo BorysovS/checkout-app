@@ -24,7 +24,7 @@ export  const PromoForm = ({ onApply }: PromoFormProps) => {
         placeholder="Enter promo code"
         className="border p-2 w-full mb-2"
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full focus:bg-blue-950 hover:bg-blue-700 transition-all duration-300 cursor-pointer">
         Apply
       </button>
     </form>
