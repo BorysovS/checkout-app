@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+E-Commerce App
+This is a simple e-commerce application built with Next.js, TypeScript, React, and Tailwind CSS. It allows users to browse a list of products, view product details, and proceed to a checkout page where they can apply promo codes to get discounts.
+Features
 
-## Getting Started
+Product Listing: Displays a list of products fetched from the DummyJSON API (https://dummyjson.com/products).
+Checkout Page: Allows users to view product details and apply promo codes for discounts.
+Responsive Design: Built with Tailwind CSS for a mobile-friendly UI.
+Optimized Images: Uses Next.js <Image /> component with priority for better performance (Largest Contentful Paint optimization).
+Promo Codes: Supports the following promo codes for discounts:
+DISCOUNT10: 10% off the product price.
+DISCOUNT20: 20% off the product price.
+DISCOUNT30: 30% off the product price.
 
-First, run the development server:
 
-```bash
+
+Installation
+
+Clone the repository:
+git clone <repository-url>
+cd e-commerce-app
+
+
+Install dependencies:
+npm install
+
+
+Run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 in your browser to view the app.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Usage
 
-To learn more about Next.js, take a look at the following resources:
+Browse Products: Visit the homepage (/) to see the list of products.
+Checkout: Click the "Checkout" button on any product to navigate to /checkout?product_id=<ID>.
+Apply Promo Codes: On the checkout page, enter one of the following promo codes: DISCOUNT10, DISCOUNT20, or DISCOUNT30 to apply a discount.
+Return to Home: Use the "Back to Home" link on the checkout page to return to the homepage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project Structure
+src/
+├── app/
+│   ├── checkout/
+│   │   └── page.tsx        # Checkout page
+│   └── page.tsx            # Homepage
+├── components/
+│   ├── CheckoutClient.tsx  # Client-side checkout logic
+│   ├── ProductCard.tsx     # Product card component
+│   ├── PromoForm.tsx       # Promo code form
+│   ├── OrderSummary.tsx    # Order summary display
+│   └── index.ts            # Component exports
+├── types/
+│   └── product.ts          # TypeScript types
+├── utils/
+│   ├── api.ts              # API fetch functions
+│   └── calculateDiscount.ts # Discount calculation logic
+├── .prettierrc             # Prettier configuration
+├── .prettierignore         # Prettier ignore rules
+└── next.config.js          # Next.js configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Dependencies
 
-## Deploy on Vercel
+Next.js: Framework for server-side rendering and routing.
+TypeScript: For type safety.
+Tailwind CSS: For styling.
+Prettier: For code formatting (with prettier-plugin-tailwindcss for sorting Tailwind classes).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
