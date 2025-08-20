@@ -12,7 +12,7 @@ export default async function HomePage() {
       <Suspense fallback={<Loading />}>
         <div className="container mx-auto p-4">
           <h1 className="text-2xl font-bold mb-4">Products</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {products.map((product) => (
               <div key={product.id} className="border p-4 rounded-lg shadow-md bg-slate-500 focus:bg-slate-400 hover:scale-105 hover:bg-slate-400 transition-all duration-300">
                 <Image priority src={product.thumbnail} alt={product.title} width={200} height={200} className="w-full h-48 object-contain mb-4" />
